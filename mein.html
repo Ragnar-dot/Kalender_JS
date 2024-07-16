@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
-
-
 <head>
-    <script language="javascript" type="text/javascript" src="step4.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalenderblatt Juli</title>
+    <title>Kalenderblatt</title>
     <style>
         body {
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
             margin: 0;
-            padding: 100px ;
+            padding: 20px;
             font-family: Arial, sans-serif;
-          
         }
         .container {
             background-image: url("./20616899-auge-im.png.jpg");
-            object-position: center;
+            display: flex;
             background-color: rgba(228, 235, 236, 0);
             background-repeat: no-repeat;
-            
-            
-            
-            
+            background-size: 300%;
         }
         .calendar, .info {
             margin: 0 20px;
@@ -33,9 +26,6 @@
             text-shadow: #ad88889c;
             background-color: #ffffff59;
             font-style: italic;
-
-        
-            
         }
         table {
             border-collapse: collapse;
@@ -45,13 +35,9 @@
             border: 1px solid #00000060;
             padding: 10px;
             text-align: center;
-            
-            
         }
         th {
             background-color: #3cff00;
-            text-shadow: 2px 2px rgba(29, 29, 29, 0.178);
-            
         }
         h1 {
             margin: 0 0 20px 0;
@@ -59,103 +45,145 @@
             background-color: rgba(255, 255, 255, 0.664);
             font-style: italic;
             opacity: 80%;
-            text-shadow: 3px 3px 0px #8585859a;
-            background-image:linear-gradient(90deg, rgba(123, 95, 175, 0.534) 16%, rgb(170, 250, 213) 50%)
         }
-
-        
-        
-        
-        
-        
-            
-
-        
-             
-        
-
-        
-        
-    
-
-
-        
-        td:hover {background-color: rgb(160, 243, 65);}
-
-        
-
-        
-        </style>
+        .info {
+            max-width: 300px;
+        }
+        td:hover {
+            background-color: rgb(160, 243, 65);
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .controls button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .holiday {
+            background-color: #ffcccc;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="calendar">
-            <h1>Kalenderblatt Juli</h1>
-            <table>
-                <tr>
-                    <th>Mo</th>
-                    <th>Di</th>
-                    <th>Mi</th>
-                    <th>Do</th>
-                    <th>Fr</th>
-                    <th>Sa</th>
-                    <th>So</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>15</td>
-                    <td>16</td>
-                    <td>17</td>
-                    <td>18</td>
-                    <td>19</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>21</td>
-                    <td>22</td>
-                    <td>23</td>
-                    <td>24</td>
-                    <td>25</td>
-                    <td>26</td>
-                    <td>27</td>
-                </tr>
-                <tr>
-                    <td>28</td>
-                    <td>29</td>
-                    <td>30</td>
-                    <td>31</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <h1 id="calendar-title">Kalenderblatt</h1>
+            <table id="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Mo</th>
+                        <th>Di</th>
+                        <th>Mi</th>
+                        <th>Do</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                        <th>So</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Kalenderdaten werden hier dynamisch eingefügt -->
+                </tbody>
             </table>
-            <div id="debug">
-
-            </div>
-            <div class="info">
-                <h2>Informationen</h2>
-                <p>Hier können Sie zusätzliche Informationen hinzufügen, die neben dem Kalender angezeigt werden sollen.</p>
-                <p>Beispielsweise können hier Termine, wichtige Notizen oder allgemeine Hinweise stehen.</p>
+            <div class="controls">
+                <button onclick="prevMonth()">Vorheriger Monat</button>
+                <button onclick="nextMonth()">Nächster Monat</button>
             </div>
         </div>
+        <div class="info">
+            <h2>Informationen</h2>
+            <p>Hier können Sie zusätzliche Informationen hinzufügen, die neben dem Kalender angezeigt werden sollen.</p>
+            <p>Beispielsweise können hier Termine, wichtige Notizen oder allgemeine Hinweise stehen.</p>
+        </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            generateCalendar();
+        });
+
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        const holidays = {
+            0: { 1: "Neujahr" }, // Januar
+            3: { 1: "Tag der Arbeit" }, // Mai
+            9: { 3: "Tag der Deutschen Einheit" }, // Oktober
+            11: { 25: "Erster Weihnachtsfeiertag", 26: "Zweiter Weihnachtsfeiertag" } // Dezember
+        };
+
+        function generateCalendar() {
+            const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            const calendarTitle = document.getElementById('calendar-title');
+            const calendarTableBody = document.querySelector('#calendar-table tbody');
+
+            // Monatsnamen auf Deutsch
+            const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
+            // Kalender Titel setzen
+            calendarTitle.textContent = `Kalenderblatt ${monthNames[currentMonth]} ${currentYear}`;
+
+            // Kalender-Tabellenkörper leeren
+            calendarTableBody.innerHTML = '';
+
+            let date = 1;
+            let firstDay = (firstDayOfMonth + 6) % 7; // Anpassung für Montag als ersten Wochentag
+
+            // Schleife für Kalenderreihen
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+
+                // Schleife für Kalenderspalten
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+
+                    if (i === 0 && j < firstDay) {
+                        cell.textContent = '';
+                    } else if (date > daysInMonth) {
+                        cell.textContent = '';
+                    } else {
+                        cell.textContent = date;
+
+                        // Feiertage markieren
+                        if (holidays[currentMonth] && holidays[currentMonth][date]) {
+                            cell.classList.add('holiday');
+                            cell.title = holidays[currentMonth][date];
+                        }
+
+                        date++;
+                    }
+
+                    row.appendChild(cell);
+                }
+
+                calendarTableBody.appendChild(row);
+
+                if (date > daysInMonth) {
+                    break;
+                }
+            }
+        }
+
+        function prevMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar();
+        }
+
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar();
+        }
+    </script>
 </body>
 </html>
