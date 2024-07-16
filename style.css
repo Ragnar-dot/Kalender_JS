@@ -1,0 +1,151 @@
+
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    margin: center;
+    box-sizing: border-box;
+}
+.image-container {
+    background-image: url("./20616899-auge-im.png.jpg"); display: inline-block;
+    display: flex;
+    background-color: rgba(228, 235, 236, 0);
+    background-repeat: no-repeat;
+    background-size: 300%;
+    margin: 100px;
+    
+    
+}
+.calendar, .info {
+    margin: 0 50px;
+    text-align: center;
+    text-shadow: #e4a359;
+    background-color: #ffffff44;
+    font-style: italic;
+    margin: flex;
+}
+table {
+    border-collapse: collapse;
+    
+    
+}
+th, td {
+    border: 1px solid #00000021;
+    padding: 10px;
+    text-align: center;
+    border-radius: 1px 30%;
+    
+}
+th {
+    background-color: #dacd5d;
+}
+h1 {
+    margin: auto;
+    font-size: 30px;
+    background-color: rgba(221, 208, 136, 0.288);
+    font-style: italic;
+    opacity: 80%;
+    padding: 50px;
+}
+.info {
+    max-width: 300px;
+    
+}
+td:hover {
+    background-color: #dacd5d;
+}
+.controls button {
+    /* margin: 0 90px; */
+    font-size: 15px;
+    color: #000000b9 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #eee065;
+    padding: 30px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    
+    
+}
+
+
+
+
+
+
+.controls {
+    justify-content:start;
+    align-items: center;
+    display: flex;
+
+
+
+
+    
+}
+
+
+.controls :hover {
+    text-shadow: 0px 0px 6px rgb(240, 236, 236);
+    box-shadow: 0px 2px 30px -2px rgba(248, 247, 247, 0.815);
+    transition: all 0.4s ease 0s;
+}
+
+
+
+
+
+
+
+
+
+.arrow {
+    background-color: #0c0c0c;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+    /* height: 50px; */
+
+    
+
+    
+    
+    
+
+    
+}
+
+
+.arrow:hover {
+    background-color: #fcfbfa;
+}
+
+.arrow:focus {
+    outline: none;
+    box-shadow: 0 0 5px #000000;
+}
+
+
+
+
+.holiday {
+background-color: #ffcccc;
+}
+.info h3 {
+margin-top: 30px;
+}
+
+button:hover {
+
+border-radius: 13; background-color: rgb(241, 227, 99);
+
+}
