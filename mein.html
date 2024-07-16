@@ -1,76 +1,143 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalenderblatt</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalenderblatt</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin: 0;
+                padding: 10px;
+                font-family: Arial, sans-serif;
+                margin: center
+            }
+            .container {
+                background-image: url("./20616899-auge-im.png.jpg"); display: inline-block;
+                display: flex;
+                background-color: rgba(228, 235, 236, 0);
+                background-repeat: no-repeat;
+                background-size: 300%;
+                margin: 100px;
+                
+                
+            }
+            .calendar, .info {
+                margin: 0 50px;
+                text-align: center;
+                text-shadow: #e4a359;
+                background-color: #ffffff44;
+                font-style: italic;
+                margin: flex;
+            }
+            table {
+                border-collapse: collapse;
+                
+                
+            }
+            th, td {
+                border: 1px solid #00000021;
+                padding: 10px;
+                text-align: center;
+                border-radius: 1px 30%;
+                
+            }
+            th {
+                background-color: #dacd5d;
+            }
+            h1 {
+                margin: auto;
+                font-size: 30px;
+                background-color: rgba(221, 208, 136, 0.288);
+                font-style: italic;
+                opacity: 80%;
+                padding: 50px;
+            }
+            .info {
+                max-width: 300px;
+                
+            }
+            td:hover {
+                background-color: #dacd5d;
+            }
+            .controls button {
+                margin: 0 90px;
+                font-size: 15px;
+                color: #000000b9 !important;
+                text-transform: uppercase;
+                text-decoration: none;
+                background: #eee065;
+                padding: 30px;
+                border-radius: 50px;
+                display: inline-block;
+                border: none;
+                transition: all 0.4s ease 0s;
+            }
+
+
+
+            .controls {
+                display: flex;
+                justify-content:center;
+                margin-top: center;
+            }
+
+
+            .controls :hover {
+                text-shadow: 0px 0px 6px rgb(240, 236, 236);
+                box-shadow: 0px 2px 30px -2px rgba(248, 247, 247, 0.815);
+                transition: all 0.4s ease 0s;
+            }
+
+
+
+            .arrow {
+                background-color: #0c0c0c;
+                
+                border-radius: 4px;
+                padding: 10px;
+                font-size: 24px;
+                cursor: pointer;
+                margin: 0 10px;
+                transition: background-color 0.3s ease;
+            }
+
+            
+            
+            .arrow:hover {
+                background-color: #fcfbfa;
         }
-        .container {
-            background-image: url("./20616899-auge-im.png.jpg");
-            display: flex;
-            background-color: rgba(228, 235, 236, 0);
-            background-repeat: no-repeat;
-            background-size: 300%;
+
+        .arrow:focus {
+        outline: none;
+        box-shadow: 0 0 5px #000000;
         }
-        .calendar, .info {
-            margin: 0 20px;
-            text-align: center;
-            text-shadow: #ad88889c;
-            background-color: #ffffff59;
-            font-style: italic;
-        }
-        table {
-            border-collapse: collapse;
-            border-radius: 10px;
-        }
-        th, td {
-            border: 1px solid #00000060;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #3cff00;
-        }
-        h1 {
-            margin: 0 0 20px 0;
-            font-size: 40px;
-            background-color: rgba(255, 255, 255, 0.664);
-            font-style: italic;
-            opacity: 80%;
-        }
-        .info {
-            max-width: 300px;
-        }
-        td:hover {
-            background-color: rgb(160, 243, 65);
-        }
-        .controls {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .controls button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
+
+            
+
+        
         .holiday {
             background-color: #ffcccc;
         }
+        .info h3 {
+            margin-top: 30px;
+        }
+
+        button:hover {
+            
+            border-radius: 13; background-color: rgb(241, 227, 99);
+            
+        }
+
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="calendar">
-            <h1 id="calendar-title">Kalenderblatt</h1>
+            <h1 id="calendar-title"></h1>
             <table id="calendar-table">
                 <thead>
                     <tr>
@@ -88,14 +155,20 @@
                 </tbody>
             </table>
             <div class="controls">
-                <button onclick="prevMonth()">Vorheriger Monat</button>
-                <button onclick="nextMonth()">Nächster Monat</button>
+                <button class="arrow" onclick="prevMonth()">
+                    &larr;
+                </button>
+                <button class="arrow" onclick="nextMonth()">
+                    &rarr;
+                </button>
             </div>
         </div>
         <div class="info">
-            <h2>Informationen</h2>
-            <p>Hier können Sie zusätzliche Informationen hinzufügen, die neben dem Kalender angezeigt werden sollen.</p>
-            <p>Beispielsweise können hier Termine, wichtige Notizen oder allgemeine Hinweise stehen.</p>
+            <h2></h2>
+            <p></p>
+            <div id="holiday-info">
+                <!-- Feiertagsinformationen werden hier dynamisch eingefügt -->
+            </div>
         </div>
     </div>
     <script>
@@ -108,7 +181,7 @@
 
         const holidays = {
             0: { 1: "Neujahr" }, // Januar
-            3: { 1: "Tag der Arbeit" }, // Mai
+            4: { 1: "Tag der Arbeit" }, // Mai
             9: { 3: "Tag der Deutschen Einheit" }, // Oktober
             11: { 25: "Erster Weihnachtsfeiertag", 26: "Zweiter Weihnachtsfeiertag" } // Dezember
         };
@@ -119,6 +192,7 @@
 
             const calendarTitle = document.getElementById('calendar-title');
             const calendarTableBody = document.querySelector('#calendar-table tbody');
+            const holidayInfoDiv = document.getElementById('holiday-info');
 
             // Monatsnamen auf Deutsch
             const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
@@ -126,8 +200,9 @@
             // Kalender Titel setzen
             calendarTitle.textContent = `Kalenderblatt ${monthNames[currentMonth]} ${currentYear}`;
 
-            // Kalender-Tabellenkörper leeren
+            // Kalender-Tabellenkörper und Feiertagsinformationen leeren
             calendarTableBody.innerHTML = '';
+            holidayInfoDiv.innerHTML = '';
 
             let date = 1;
             let firstDay = (firstDayOfMonth + 6) % 7; // Anpassung für Montag als ersten Wochentag
@@ -147,10 +222,15 @@
                     } else {
                         cell.textContent = date;
 
-                        // Feiertage markieren
+                        // Feiertage markieren und Informationen hinzufügen
                         if (holidays[currentMonth] && holidays[currentMonth][date]) {
                             cell.classList.add('holiday');
                             cell.title = holidays[currentMonth][date];
+
+                            // Feiertagsinformationen hinzufügen
+                            const holidayInfo = document.createElement('h3');
+                            holidayInfo.textContent = `${date}. ${monthNames[currentMonth]}: ${holidays[currentMonth][date]}`;
+                            holidayInfoDiv.appendChild(holidayInfo);
                         }
 
                         date++;
