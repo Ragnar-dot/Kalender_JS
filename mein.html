@@ -4,17 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        
-        
         <title>Kalenderblatt</title>
         
     </head>
     
     <body>
+        
         <div class="image-container">
             <div class="calendar">
                 <h1 id="calendar-title"></h1>
                 <div class="controls">
+                    <div class="clock">
+                        <div class="hand hour" id="hour"></div>
+                        <div class="hand minute" id="minute"></div>
+                        <div class="hand second" id="second"></div>
+                    </div>
                     <button class="arrow" onclick="prevMonth()">&larr;</button>
                     <table id="calendar-table">
                         <thead>
@@ -34,7 +38,16 @@
                     </table>
                     <button class="arrow" onclick="nextMonth()">&rarr;</button>
                 </div>
+
+                
+
             </div>
+
+
+            
+            
+            
+            
             <div class="info">
                 <h2></h2>
                 <p></p>
@@ -43,6 +56,7 @@
                 </div>
             </div>
         </div>
+        
         
         <script type="text/javascript" src="C.js"></script>
     </body>
