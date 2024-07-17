@@ -68,6 +68,7 @@ table {
     
     
     
+    
 }
 
 th, td {
@@ -122,6 +123,7 @@ h1 {
 td:hover {
     background-color: #09ff00;
     
+    
 }
 
 
@@ -134,10 +136,31 @@ td:hover {
     justify-content:start;
     align-items: center;
     display: flex;
-    box-shadow: #fcfbfa;
-    
+    box-shadow: #000000;
     
 }
+
+
+
+button {
+    animation: pulsieren 2s infinite;
+}
+
+@keyframes pulsieren {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
 
 
@@ -146,6 +169,7 @@ td:hover {
     text-shadow: 0px 0px 6px rgb(240, 236, 236);
     box-shadow: 0px 2px 30px -2px rgba(248, 247, 247, 0.815);
     transition: all 0.4s ease 0s;
+    
 }
 
 
@@ -156,28 +180,31 @@ td:hover {
     padding: 10px;
     font-size: 24px;
     cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.3s ease;
-    /* height: 50px; */
-    
-    
-    
-    
-    
-    
     
     
 }
 
 
 .arrow:hover {
-    background-color: #fcfbfa;
-}
-
-.arrow:focus {
+    background-color: #ffffff;
     outline: none;
     box-shadow: 0 0 5px #000000;
+    cursor: pointer
+    
+    
 }
+
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.changing {
+    animation: colorchange 2s;
+}
+
 
 
 
@@ -195,10 +222,20 @@ td:hover {
     font-style: italic;
     text-wrap: balance;
     border-radius: 3%;
+    
+    /* animation für den Infotext .info h3 */
+    animation: textwelle 1s;
 }
 
-button:hover {
+@keyframes textwelle {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }  
     
-    border-radius: 13; background-color: rgb(241, 227, 99);
-    
+    100% {
+        transform: scale(1);
+        opacity: 1;	
+    }
 }
+
