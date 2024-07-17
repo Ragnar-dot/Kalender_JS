@@ -1,4 +1,9 @@
 
+.current-day {
+    background-color: lightblue;
+    font-weight: bold;
+    
+}
 
 body {
     display: flex;
@@ -11,22 +16,30 @@ body {
     box-sizing: border-box;
 }
 .image-container {
-    background-image: url("./20616899-auge-im.png.jpg"); display: inline-block;
+    background-image: url("how-to-make-background-blur-for-vertical-video.jpg"); display: inline-block;
     display: flex;
-    background-color: rgba(228, 235, 236, 0);
+    backdrop-filter: blur(4px) saturate(300%);
+    -webkit-backdrop-filter: blur(9px) saturate(300%);
     background-repeat: no-repeat;
-    background-size: 300%;
+    background-size: 200%;
     margin: 100px;
     
     
 }
+
+
+
+
+
+
+
+
 .calendar, .info {
     margin: 0 50px;
     text-align: center;
-    text-shadow: #e4a359;
-    background-color: #ffffff44;
     font-style: italic;
     margin: flex;
+    top: 3em;
 }
 table {
     border-collapse: collapse;
@@ -46,50 +59,69 @@ table {
     display: inline-block;
     border: none;
     transition: all 0.4s ease 0s;
+    backdrop-filter: blur(4px) saturate(200%);
+    -webkit-backdrop-filter: blur(4px) saturate(200%);
+    background-color: rgba(229, 218, 183, 0.52);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    
+    
     
     
 }
 
 th, td {
-    border: 1px solid #00000021;
+    border: 1px solid #ffffff38;
     padding: 10px;
     text-align: center;
     border-radius: 1px 30%;
+    backdrop-filter: blur(4px) saturate(200%);
+    -webkit-backdrop-filter: blur(4px) saturate(200%);
+    
     
 }
 
 th:nth-child(6), /* Samstag */
 td:nth-child(6) {
-            background-color: #f79797; /* ROT für Samstag */
-            }
+    background-color: #f79797e5; /* ROT für Samstag */
+    backdrop-filter: blur(4px) saturate(200%);
+    -webkit-backdrop-filter: blur(4px) saturate(200%);
+}
 th:nth-child(7), /* Sonntag */
 td:nth-child(7) {
-            background-color: #fa7676; /* ROT für Sonntag */
-        }
+    background-color: #fa7676f8; /* ROT für Sonntag */
+    backdrop-filter: blur(4px) saturate(200%);
+    -webkit-backdrop-filter: blur(4px) saturate(200%);
+}
 
 
 
 th {
-    background-color: #dacd5d;
+    background-color: #dace5d98;
+    backdrop-filter: blur(4px) saturate(200%);
+    -webkit-backdrop-filter: blur(4px) saturate(200%);
 }
 
 
 h1 {
     margin: auto;
     font-size: 30px;
-    background-color: rgba(221, 208, 136, 0.288);
+    /* background-color: rgba(221, 208, 136, 0.288); */
     font-style: italic;
     opacity: 80%;
     padding: 50px;
+    
 }
 .info {
     max-width: 300px;
+    box-shadow: #fcfbfa;
+    
     
 }
 
 td:hover {
-    background-color: #dacd5d;
-
+    background-color: #09ff00;
+    
 }
 
 
@@ -102,7 +134,8 @@ td:hover {
     justify-content:start;
     align-items: center;
     display: flex;
-
+    box-shadow: #fcfbfa;
+    
     
 }
 
@@ -126,13 +159,13 @@ td:hover {
     margin: 0 10px;
     transition: background-color 0.3s ease;
     /* height: 50px; */
-
-    
-
     
     
     
-
+    
+    
+    
+    
     
 }
 
@@ -150,22 +183,22 @@ td:hover {
 
 
 .holiday {
-background-color: #ffcccc;
+    background-color: #ffcccc;
 }
 
-.crurrent-day {
-    background-color: lightblue;
-    font-weight: bold;
-}
 
 
 
 .info h3 {
-margin-top: 30px;
+    margin-top: 90px;
+    background-color: #f5d1f53f;
+    font-style: italic;
+    text-wrap: balance;
+    border-radius: 3%;
 }
 
 button:hover {
-
-border-radius: 13; background-color: rgb(241, 227, 99);
-
+    
+    border-radius: 13; background-color: rgb(241, 227, 99);
+    
 }
