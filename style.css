@@ -33,31 +33,7 @@ table {
     
     
 }
-th, td {
-    border: 1px solid #00000021;
-    padding: 10px;
-    text-align: center;
-    border-radius: 1px 30%;
-    
-}
-th {
-    background-color: #dacd5d;
-}
-h1 {
-    margin: auto;
-    font-size: 30px;
-    background-color: rgba(221, 208, 136, 0.288);
-    font-style: italic;
-    opacity: 80%;
-    padding: 50px;
-}
-.info {
-    max-width: 300px;
-    
-}
-td:hover {
-    background-color: #dacd5d;
-}
+
 .controls button {
     /* margin: 0 90px; */
     font-size: 15px;
@@ -74,6 +50,49 @@ td:hover {
     
 }
 
+th, td {
+    border: 1px solid #00000021;
+    padding: 10px;
+    text-align: center;
+    border-radius: 1px 30%;
+    
+}
+
+th:nth-child(6), /* Samstag */
+td:nth-child(6) {
+            background-color: #f79797; /* ROT für Samstag */
+            }
+th:nth-child(7), /* Sonntag */
+td:nth-child(7) {
+            background-color: #fa7676; /* ROT für Sonntag */
+        }
+
+
+
+th {
+    background-color: #dacd5d;
+}
+
+
+h1 {
+    margin: auto;
+    font-size: 30px;
+    background-color: rgba(221, 208, 136, 0.288);
+    font-style: italic;
+    opacity: 80%;
+    padding: 50px;
+}
+.info {
+    max-width: 300px;
+    
+}
+
+td:hover {
+    background-color: #dacd5d;
+
+}
+
+
 
 
 
@@ -84,11 +103,10 @@ td:hover {
     align-items: center;
     display: flex;
 
-
-
-
     
 }
+
+
 
 
 .controls :hover {
@@ -96,12 +114,6 @@ td:hover {
     box-shadow: 0px 2px 30px -2px rgba(248, 247, 247, 0.815);
     transition: all 0.4s ease 0s;
 }
-
-
-
-
-
-
 
 
 
@@ -140,6 +152,14 @@ td:hover {
 .holiday {
 background-color: #ffcccc;
 }
+
+.crurrent-day {
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+
+
 .info h3 {
 margin-top: 30px;
 }
