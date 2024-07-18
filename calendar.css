@@ -2,7 +2,19 @@
 .current-day {
     background-color: lightblue;
     font-weight: bold;
-    
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 body {
@@ -80,10 +92,10 @@ table {
 .controls button {
     /* margin: 0 90px; */
     font-size: 15px;
-    color: #ffffff !important;
+    color: #090909 !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #eee065;
+    background: #eee06500;
     padding: 30px;
     border-radius: 50px;
     display: inline-block;
@@ -91,10 +103,11 @@ table {
     transition: all 0.4s ease 0s;
     backdrop-filter: blur(4px) saturate(200%);
     -webkit-backdrop-filter: blur(4px) saturate(200%);
-    background-color: rgba(229, 218, 183, 0.002);
+    background-color: rgba(247, 242, 228, 0.682);
     border-radius: 50px ;
     border: 1px solid rgba(300, 213, 209, 1);
-    box-shadow: inset 5px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 5px 1px 5px rgba(0, 0, 0, 0.794);
+    
             
     
 }
@@ -170,10 +183,6 @@ td:hover {
 
 
 
-
-
-
-
 .controls {
     justify-content:start;
     align-items: center;
@@ -184,22 +193,24 @@ td:hover {
 
 
 
-button {
-    animation: pulsieren 2s infinite;
+
+
+
+.current-day {
+    background-color: rgb(135, 210, 236);
+    font-weight: bold;
+    animation: pulse 2s infinite;
 }
 
-@keyframes pulsieren {
+@keyframes pulse {
     0% {
         transform: scale(1);
-        opacity: 1;
     }
     50% {
         transform: scale(1.1);
-        opacity: 0.7;
     }
     100% {
         transform: scale(1);
-        opacity: 1;
     }
 }
 
@@ -300,6 +311,9 @@ button {
     border-radius: 4px;
     margin-bottom: 3px;
 }
+
+
+
 
 
 

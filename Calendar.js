@@ -9,7 +9,9 @@ const currentDay = currentDate.getDate();
 
 const holidays = {
     0: { 1: "Neujahr" },
+    2: { 29: "Karfreitag" }, // Karfreitag (Beweglicher Feiertag)
     4: { 1: "Tag der Arbeit" },
+    5: { 11: "Fronleichnam" }, // Fronleichnam (Beweglicher Feiertag in einigen Bundesländern)
     9: { 3: "Tag der Deutschen Einheit" },
     11: { 25: "Erster Weihnachtsfeiertag", 26: "Zweiter Weihnachtsfeiertag" }
 };

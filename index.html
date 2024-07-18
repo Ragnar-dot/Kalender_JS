@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="calendar.css">
-        <link rel="stylesheet" href="clock.css">  
-        <title>Kalenderblatt</title>
+        <link rel="stylesheet" href="clock.css"> 
+        <link rel="stylesheet" href="wetter.css">
+        <title></title>
         
     </head>
     
@@ -13,12 +14,12 @@
         
         <div class="image-container">
             <div class="calendar">
-                <h1 id="calendar-title"></h1>
                 <div class="controls">
                     <div class="clock">
                         <div class="hand hour" id="hour"></div>
                         <div class="hand minute" id="minute"></div>
                         <div class="hand second" id="second"></div>
+                        <h1 id="calendar-title"></h1>
                     </div>
                     <button class="arrow" onclick="prevMonth()">&larr;</button>
                     <table id="calendar-table">
@@ -38,17 +39,20 @@
                         </tbody>
                     </table>
                     <button class="arrow" onclick="nextMonth()">&rarr;</button>
+                    <div id="weather-widget">
+                        <div id="weather-animation"></div>
+                        <div id="weather-info">
+                            <h2 id="temperature"></h2>
+                            <p id="description"></p>
+                        </div>
+                    </div>
                 </div>
 
                 
 
             </div>
 
-
-            
-            
-            
-            
+    
             <div class="info">
                 <h2></h2>
                 <p></p>
@@ -59,6 +63,7 @@
                 <div id="eventDiv">
 
                 </div>
+                
                     
                 
             </div>
@@ -66,6 +71,7 @@
         
         <script type="text/javascript" src="Clock.js"></script>
         <script type="text/javascript" src="Calendar.js"></script>
+        <script src="wetter.js"></script>
     </body>
     </html>
     

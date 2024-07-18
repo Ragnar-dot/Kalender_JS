@@ -1,0 +1,88 @@
+#weather-widget {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #cccccc26;
+    border-radius: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-left: 10px;
+    margin-right: 60px;
+    margin-bottom: 300px;
+    
+    box-shadow: 9px 10px 20px rgba(0, 2, 2, 0.77);
+    
+}
+
+#weather-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#weather-info {
+    position: relative;
+    z-index: 1;
+}
+
+.sun {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to { transform: translateX(-50%) rotate(360deg); }
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: blue;
+    animation: rain 0.5s linear infinite;
+}
+
+@keyframes rain {
+    from { top: -20px; }
+    to { top: 100%; }
+}
+
+.wind {
+    width: 100%;
+    height: 2px;
+    background: gray;
+    position: absolute;
+    top: 50%;
+    animation: wind 1s linear infinite;
+}
+
+@keyframes wind {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+
+.fog {
+    width: 100%;
+    height: 50px;
+    background: rgba(200, 200, 200, 0.5);
+    position: absolute;
+    top: 50%;
+    animation: fog 3s linear infinite;
+}
+
+@keyframes fog {
+    from { left: -100%; }
+    to { left: 100%; }
+}
