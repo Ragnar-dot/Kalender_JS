@@ -10,22 +10,50 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     margin: 0;
-    padding: 10px;
+    padding: 30px;
     font-family: Arial, sans-serif;
     margin: center;
     box-sizing: border-box;
 }
 .image-container {
-    background-image: url("how-to-make-background-blur-for-vertical-video.jpg"); display: inline-block;
-    display: flex;
-    backdrop-filter: blur(4px) saturate(300%);
-    -webkit-backdrop-filter: blur(9px) saturate(300%);
+    background-image: url("how-to-make-background-blur-for-vertical-video.jpg");
+    display: block; 
     background-repeat: no-repeat;
-    background-size: 200%;
+    background-size: cover; /* Ensures the image covers the container */
     margin: 100px;
-    
+    color: #000000;
+    opacity: 0.9; 
     
 }
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    background-image: url("plane-6559698_1280.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px); /* Set a specific blur value */
+    z-index: -1;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    display: block; 
+    background: rgba(255, 255, 255, 0.705); /* Semi-transparent white layer */
+    mix-blend-mode: lighten; 
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover; /* Ensures the image covers the container */
+}
+
 
 
 
@@ -39,10 +67,12 @@ body {
     text-align: center;
     font-style: italic;
     margin: flex;
-    top: 3em;
+    top: 5%;
 }
 table {
     border-collapse: collapse;
+    box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0),
+                9px 15px 20px rgba(0, 0, 0, 0.3);
     
     
 }
@@ -50,29 +80,27 @@ table {
 .controls button {
     /* margin: 0 90px; */
     font-size: 15px;
-    color: #000000b9 !important;
+    color: #ffffff !important;
     text-transform: uppercase;
     text-decoration: none;
     background: #eee065;
     padding: 30px;
     border-radius: 50px;
     display: inline-block;
-    border: none;
+    border: left 50px;
     transition: all 0.4s ease 0s;
     backdrop-filter: blur(4px) saturate(200%);
     -webkit-backdrop-filter: blur(4px) saturate(200%);
-    background-color: rgba(229, 218, 183, 0.52);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
-    
-    
-    
-    
+    background-color: rgba(229, 218, 183, 0.002);
+    border-radius: 50px ;
+    border: 1px solid rgba(300, 213, 209, 1);
+    box-shadow: inset 5px 1px 5px rgba(0, 0, 0, 0.5);
+            
     
 }
 
 th, td {
-    border: 1px solid #ffffff38;
+    border: 1px solid #ffffff00;
     padding: 10px;
     text-align: center;
     border-radius: 1px 30%;
@@ -105,23 +133,37 @@ th {
 
 
 h1 {
-    margin: auto;
+    
     font-size: 30px;
-    /* background-color: rgba(221, 208, 136, 0.288); */
-    font-style: italic;
+    font-style: oblique;
     opacity: 80%;
-    padding: 50px;
+    padding: 5px;
+    margin-left: 150px;
+    color: #000000;
+    background: #33333300;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #f8a304f8 0px 0px 20px, #ffffff 0px 0px 30px, #ffffff 0px 0px 40px, #ded2d8 0px 0px 50px, #FF2D95 0px 0px 75px;
+    box-shadow: inset 0px 0px 0px rgb(143, 140, 140),
+                0px 20px 20px rgba(0, 0, 0, 0.194);
+    
+    
     
 }
 .info {
-    max-width: 300px;
-    box-shadow: #fcfbfa;
+    max-width: 3000px;
+    box-shadow: #ffffff;
+    color: black;
+    background: #000000;
+    
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.091);
+    
     
     
 }
 
 td:hover {
-    background-color: #09ff00;
+    background-color: #05cfee;
     
     
 }
@@ -217,11 +259,11 @@ button {
 
 
 .info h3 {
-    margin-top: 90px;
-    background-color: #f5d1f53f;
+    margin-top: 1px;
+    background-color: #ffffff42;
     font-style: italic;
     text-wrap: balance;
-    border-radius: 3%;
+    border-radius: 50px 5%;
     
     /* animation für den Infotext .info h3 */
     animation: textwelle 1s;
@@ -240,42 +282,26 @@ button {
 }
 
 
-
-/* Css für die animierte uhr */
-
-.clock {
+.event {
     position: relative;
-    width: 150px;
-    height: 150px;
-    border: 2px solid #333;
-    border-radius: 1px 30%;
-    background: rgba(228, 205, 255, 0.747);
-    
+    font-size: 12px;
+    color: #333;
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    margin-bottom: 3px;
 }
 
-.hand {
-    position: absolute;
-    width: 50%;
-    height: 6px;
-    background: #333;
-    top: 50%;
-    transform-origin: 100%;
-    transform: rotate(90deg);
-    transition: transform 0.5s ease-in-out;
+.delete-button {
+    position: relative;
+    cursor: pointer;
+    margin-left: px;
+    color: #888;
+    border-radius: 4px;
+    margin-bottom: 3px;
 }
 
-.hour {
-    height: 8px;
-    background: #000;
-}
 
-.minute {
-    height: 6px;
-    background: #666;
-}
 
-.second {
-    height: 4px;
-    background: red;
-}
+
 

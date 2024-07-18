@@ -1,0 +1,62 @@
+/* Css für die animierte uhr */
+
+.clock {
+    position: relative;
+    background-image: url("zifferblatt.jpg");
+    background-position:center ;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #85858545;
+    border-radius: 1px 30%;
+    margin-right: 20px;
+    margin-bottom: 300px;
+    box-shadow: inset 0px 1px 50px rgba(0, 0, 0, 0.5),
+                9px 30px 20px rgba(0, 0, 0, 0.712);
+
+
+
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 6px;
+    background: #000000;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.hour {
+    height: 8px;
+    background: #000;
+    border-radius: 50px;
+}
+
+.minute {
+    height: 4px;
+    background: #666;
+    border-radius: 50px;
+}
+
+.second {
+    height: 1px;
+    background: red;
+    position: relative; /* Ensure the element can have relative positioning */
+    border-radius: 50px;
+}
+
+.second:before {
+    content: '';
+    position: absolute;
+    top: -3px; /* Adjust the vertical positioning */
+    left: -3px; /* Adjust the horizontal positioning */
+    right: -3px; /* Adjust the horizontal positioning */
+    bottom: -3px; /*Adjust the vertical positioning*/
+    border: 0,8px solid transparent;
+    box-shadow: 5px 1px 1px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    pointer-events: none; /* Ensure the shadow doesn't interfere with mouse events */
+    z-index: -9; /* Ensure the shadow is behind the element */
+}
+
