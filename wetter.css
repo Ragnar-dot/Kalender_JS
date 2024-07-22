@@ -27,6 +27,24 @@
     z-index: 1;
 }
 
+.cloud {
+    width: 50px;
+    height: 50px;
+    background: rgb(32, 143, 246);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wave 5s linear infinite; /* Added duration */
+}
+
+@keyframes wave {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to { transform: translateX(-50%) rotate(360deg); }
+}
+
+
 .sun {
     width: 50px;
     height: 50px;

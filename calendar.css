@@ -25,7 +25,8 @@ body {
     padding: 30px;
     font-family: Arial, sans-serif;
     margin: center;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+     
      
 
 }
@@ -77,19 +78,23 @@ body {
     text-align: center;
     font-style: italic;
     margin: flex;
-    top: 5%;
+    top: 6%;
 }
+
+
 table {
     border-collapse: collapse;
     box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0),
-    9px 15px 20px rgba(0, 0, 0, 0.3);
-    width: 250px;     
-    height: 250px;  
-   
+    9px 15px 20px rgba(0, 0, 0, 0.697);
+    width: 450px;     
+    height: 400px;
+    margin-top: 250px;
     
-    
+
     
 }
+
+
 
 
 
@@ -159,7 +164,8 @@ h1 {
     font-style: oblique;
     opacity: 80%;
     padding: 5px;
-    margin-left: 150px;
+    margin-left: 300px;
+    margin-bottom: 30px;
     color: #000000;
     background: #33333300;
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #f8a304f8 0px 0px 20px, #ffffff 0px 0px 30px, #ffffff 0px 0px 40px, #ded2d8 0px 0px 50px, #FF2D95 0px 0px 75px;
@@ -197,6 +203,7 @@ td:hover {
     display: flex;
     box-shadow: #000000;
     
+    
 }
 
 
@@ -227,8 +234,8 @@ td:hover {
 
 
 .controls :hover {
-    text-shadow: 0px 0px 6px rgb(240, 236, 236);
-    box-shadow: 0px 2px 30px -2px rgba(248, 247, 247, 0.815);
+    text-shadow: 0px 0px 6px rgba(240, 236, 236, 0.57);
+    box-shadow: 0px 2px 30px -2px rgba(248, 247, 247, 0.494);
     transition: all 0.4s ease 0s;
     
 }
@@ -241,6 +248,7 @@ td:hover {
     padding: 10px;
     font-size: 24px;
     cursor: pointer;
+    margin-top: 250px;
     
     
 }
