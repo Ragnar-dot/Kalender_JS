@@ -4,19 +4,46 @@ async function fetchWeather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=de`;
 
     const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    if (!response.ok) {
+        throw new Error('Fehler beim Abrufen der Wetterdaten');
+    }
+    return await response.json();
+}
+
+async function fetchWeatherIcon(iconCode) {
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+    const response = await fetch(iconUrl);
+    if (!response.ok) {
+        throw new Error('Fehler beim Abrufen des Wetter-Icons');
+    }
+    
+    // Direktes Setzen der Icon-URL im img-Tag statt Blob-URL
+    return iconUrl;
 }
 
 function updateWeatherWidget(data) {
-    const temperature = document.getElementById('temperature');
+    const temperature = document.getElementById('temperature-display');
     const description = document.getElementById('description');
-    const weatherAnimation = document.getElementById('weather-animation');
+    const weatherAnimation = document.getElementById('weather-icon');
+    
+    // Wetter-Icon URL abrufen
+    const iconCode = data.weather[0].icon;
+    fetchWeatherIcon(iconCode).then(iconUrl => {
+        const img = document.createElement('img');
+        img.src = iconUrl;
+        img.alt = data.weather[0].description;
+        weatherAnimation.innerHTML = ''; // Entferne alte Inhalte
+        weatherAnimation.appendChild(img);
+    }).catch(error => {
+        console.error('Fehler beim Abrufen des Wetter-Icons:', error);
+    });
 
-    temperature.textContent = `${data.main.temp}°C`;
+    temperature.textContent = `${Number.parseFloat(data.main.temp).toFixed(1)}°C`;
     description.textContent = data.weather[0].description;
 
-    weatherAnimation.innerHTML = ''; // Clear previous animation
+    // Wetteranimation bereinigen
+    weatherAnimation.innerHTML = ''; // Alte Animationen entfernen
 
     const weatherMain = data.weather[0].main.toLowerCase();
     if (weatherMain.includes('clear')) {
@@ -42,8 +69,12 @@ function updateWeatherWidget(data) {
 }
 
 async function initWeatherWidget() {
-    const weatherData = await fetchWeather();
-    updateWeatherWidget(weatherData);
+    try {
+        const weatherData = await fetchWeather();
+        updateWeatherWidget(weatherData);
+    } catch (error) {
+        console.error('Fehler beim Initialisieren des Wetter-Widgets:', error);
+    }
 }
 
 initWeatherWidget();
