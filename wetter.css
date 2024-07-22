@@ -1,76 +1,32 @@
 #weather-widget {
     width: 200px;
     height: 200px;
-    border: 3px solid #cccccc26;
+    border: 6px solid #cccccc26;
     border-radius: 40px;
     text-align: center;
-    position: relative;
+    position: center;
     padding-left: 10px;
     margin-right: 60px;
     margin-bottom: 300px;
-    box-shadow: 9px 10px 20px rgba(0, 2, 2, 0.77);
+    box-shadow: 12px 20px 15px rgba(0, 2, 2, 0.77);
+    background-color: rgba(182, 190, 197, 0.519);
+    box-shadow: inset 5px;
+
+     
+}
+
+P {
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.527);
+    border-radius: 50px;
     
 }
 
-#weather-animation {
-    position: relative;
-    width: 100%;
-    height: 100px; /* Adjust as needed */
+h2 {
+    background-color: rgba(167, 210, 248, 0.486);
+    border-radius: 50px;
 }
 
-.sun {
-    width: 50px;
-    height: 50px;
-    background: yellow;
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
 
-.rain {
-    width: 2px;
-    height: 10px;
-    background: blue;
-    position: absolute;
-    top: 0;
-    animation: rain-animation 1s infinite linear;
-}
 
-@keyframes rain-animation {
-    0% { top: 0; }
-    100% { top: 100px; } /* Adjust based on container height */
-}
 
-.wind {
-    width: 100px;
-    height: 10px;
-    background: rgb(160, 241, 252);
-    position: absolute;
-    top: 40px;
-    animation: wind-animation 1s infinite linear;
-}
-
-@keyframes wind-animation {
-    0% { left: -100px; }
-    100% { left: 100%; }
-}
-
-.fog {
-    width: 100%;
-    height: 50px;
-    background: rgba(200, 200, 200, 0.338);
-    position: absolute;
-    top: 25px;
-}
-
-.cloud {
-    width: 60px;
-    height: 40px;
-    background: rgb(4, 158, 247);
-    border-radius: 20px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    box-shadow: 20px 0 0 0 rgb(62, 154, 247), 40px 0 0 0 rgb(38, 42, 245); /* Simple cloud shape */
-}

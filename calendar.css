@@ -2,17 +2,17 @@
 .current-day {
     background-color: lightblue;
     font-weight: bold;
-    animation: pulse 2s infinite;
+    animation: pulse 1ms inherit;
 }
 
 @keyframes pulse {
-    0% {
+    100% {
         transform: scale(1);
     }
-    50% {
-        transform: scale(1.1);
-    }
     100% {
+        transform: scale(2);
+    }
+    10% {
         transform: scale(1);
     }
 }
@@ -26,6 +26,7 @@ body {
     font-family: Arial, sans-serif;
     margin: center;
     box-sizing: border-box;
+    ;
      
      
 
@@ -39,6 +40,7 @@ body {
     color: #000000;
     opacity: 0.9; 
     
+    
 }
 
 .image-container::before {
@@ -51,22 +53,27 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    filter: blur(8px); /* Set a specific blur value */
+    filter: blur(5px); /* Set a specific blur value */
     z-index: -1;
+    opacity: 90%;
+    ;
+    
+    
 }
 
 .image-container::after {
     content: '';
     position: absolute;
     display: block; 
-    background: rgba(255, 255, 255, 0.705); /* Semi-transparent white layer */
-    mix-blend-mode: lighten; 
-    z-index: -2;
+    mix-blend-mode: luminosity; 
+    z-index: -1;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-size: cover; /* Ensures the image covers the container */
+    border-radius: 50px;
+    
 }
 
 
@@ -79,16 +86,20 @@ body {
     font-style: italic;
     margin: flex;
     top: 6%;
+    
 }
 
 
 table {
     border-collapse: collapse;
-    box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0),
-    9px 15px 20px rgba(0, 0, 0, 0.697);
+    box-shadow: inset 10px 10px 30px rgba(255, 255, 255, 0),
+    20px 30px 20px rgba(0, 0, 0, 0.928);
     width: 450px;     
     height: 400px;
     margin-top: 250px;
+    margin: flex;
+    border-radius: 1px 2px 30px;
+    
     
 
     
@@ -119,7 +130,8 @@ table {
     background-color: rgba(247, 242, 228, 0.682);
     border-radius: 50px ;
     border: 1px solid rgba(300, 213, 209, 1);
-    box-shadow: inset 5px 1px 5px rgba(0, 0, 0, 0.794);
+    box-shadow: inset 5px 1px 5px rgba(0, 0, 0, 0.991);
+    
     
             
     
@@ -129,9 +141,13 @@ th, td {
     border: 1px solid #ffffff00;
     padding: 10px;
     text-align: center;
-    border-radius: 1px 30%;
+    border-radius: 1px 2px 30%;
     backdrop-filter: blur(4px) saturate(200%);
     -webkit-backdrop-filter: blur(4px) saturate(200%);
+    background-color: #ffffff81;
+    
+    
+     
     
     
 }
@@ -144,7 +160,7 @@ td:nth-child(6) {
 }
 th:nth-child(7), /* Sonntag */
 td:nth-child(7) {
-    background-color: #fa7676f8; /* ROT für Sonntag */
+    background-color: #fc5555f8; /* ROT für Sonntag */
     backdrop-filter: blur(4px) saturate(200%);
     -webkit-backdrop-filter: blur(4px) saturate(200%);
 }
@@ -174,16 +190,19 @@ h1 {
     
     
     
+    
 }
 .info {
     max-width: 3000px;
     box-shadow: #ffffff;
     color: black;
     background: #000000;
+    margin:auto;
     
     -moz-background-clip: text;
     background-clip: text;
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.091);
+    word-break: unset;
     
     
     
@@ -257,7 +276,7 @@ td:hover {
 .arrow:hover {
     background-color: #ffffff;
     outline: none;
-    box-shadow: 0 0 5px #000000;
+    box-shadow: 0 0 5px #000000ad;
     cursor: pointer
     
     
@@ -279,7 +298,7 @@ td:hover {
 
 
 .holiday {
-    background-color: #ffcccc;
+    background-color: #c3c601b5;
 }
 
 
