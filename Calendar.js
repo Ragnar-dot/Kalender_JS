@@ -30,7 +30,7 @@ function generateCalendar() {
 
     calendarTitle.textContent = `Kalenderblatt ${monthNames[currentMonth]} ${currentYear}`;
 
-    calendarTableBody.innerHTML = '';@
+    calendarTableBody.innerHTML = '';
     holidayInfoDiv.innerHTML = '';
 
     let date = 1;
