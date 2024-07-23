@@ -1,6 +1,6 @@
 #weather-widget {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     border: 6px solid #cccccc26;
     border-radius: 40px;
     text-align: center;
@@ -26,6 +26,15 @@ h2 {
     background-color: rgba(167, 210, 248, 0.486);
     border-radius: 50px;
 }
+
+img {
+    margin-top: -50px;
+    height: 120px;
+    animation: pulse 1ms inherit;
+}
+
+
+
 
 
 

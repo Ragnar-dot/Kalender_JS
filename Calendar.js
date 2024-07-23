@@ -131,6 +131,8 @@ function prevMonth() {
     if (currentMonth < 0) {
         currentMonth = 11;
         currentYear--;
+        (audio.paused) 
+            audio.play(0);
     }
     generateCalendar();
 }
@@ -140,9 +142,14 @@ function nextMonth() {
     if (currentMonth > 11) {
         currentMonth = 0;
         currentYear++;
+        (audio.paused) 
+            audio.play(0);
     }
     generateCalendar();
 }
+
+
+
 
 
 

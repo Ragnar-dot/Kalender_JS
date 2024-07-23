@@ -27,6 +27,7 @@ function updateWeatherWidget(data) {
     const description = document.getElementById('description');
     const weatherAnimation = document.getElementById('weather-icon');
     
+    
     // Wetter-Icon URL abrufen
     const iconCode = data.weather[0].icon;
     fetchWeatherIcon(iconCode).then(iconUrl => {
