@@ -11,6 +11,7 @@
     box-shadow: 12px 20px 15px rgba(0, 2, 2, 0.77);
     background-color: rgba(182, 190, 197, 0.519);
     box-shadow: inset 5px;
+    z-index: 10;
 
      
 }

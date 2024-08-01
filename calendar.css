@@ -4,8 +4,8 @@ body {
     display: cover;
     justify-content: flex;
     
-    margin: 0;
-    padding: 10vh;
+    margin: 2vh;
+    padding: 15vh;
     font-family: Arial, sans-serif;
     /* margin: center; */
     
@@ -18,7 +18,7 @@ video {
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: index -1000;;
+    z-index: -1000;
   }
 
 
@@ -145,9 +145,9 @@ h1 {
     box-shadow: #ffffff;
     color: black;
     background: #000000;
-    margin:auto;
+    margin: auto;
     margin-bottom: -15vh;
-    margin-left: -60vh;
+    margin-left: -58vh;
     
     
     background-clip: text;
@@ -254,7 +254,7 @@ td:hover {
 
 
 .holiday {
-    background-color: #c3c601b5;
+    background-color: #c3c6013f;
 }
 
 
@@ -269,7 +269,7 @@ td:hover {
     border-radius: 10px 10px;
     
     /* animation für den Infotext .info h3 */
-    animation: textwelle 1s;
+    animation: textwelle 2s;
 }
 
 @keyframes textwelle {
@@ -282,6 +282,7 @@ td:hover {
         transform: scale(1);
         opacity: 1;	
     }
+
 }
 
 
