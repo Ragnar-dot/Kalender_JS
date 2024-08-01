@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     generateCalendar();
 });
 
+// Globale Variablen für das Datum und die Feiertage
 let currentDate = new Date();
 let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
@@ -13,12 +14,21 @@ const holidays = {
     4: { 1: "Tag der Arbeit" },
     5: { 11: "Fronleichnam" }, // Fronleichnam (Beweglicher Feiertag in einigen Bundesländern)
     9: { 3: "Tag der Deutschen Einheit" },
+    7: { 6: "Hiroshima-Gedenktag 2024", 15:"Gedenktag des Kriegsendes 2024"},
     11: { 25: "Erster Weihnachtsfeiertag", 26: "Zweiter Weihnachtsfeiertag" }
+    
 };
 
 const events = {}; // Objekt zur Speicherung der Ereignisse
 
-function generateCalendar() {
+// Hauptfunktionen als globale Variablen definieren
+const generateCalendar = generateCalendarFunction;
+const createEventElement = createEventElementFunction;
+const prevMonth = prevMonthFunction;
+const nextMonth = nextMonthFunction;
+
+// Funktion zum Generieren des Kalenders
+function generateCalendarFunction() {
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
@@ -106,7 +116,8 @@ function generateCalendar() {
     }
 }
 
-function createEventElement(eventText, index, eventKey) {
+// Funktion zum Erstellen eines Ereigniselements
+function createEventElementFunction(eventText, index, eventKey) {
     const eventDiv = document.createElement('div');
     eventDiv.classList.add('event');
     eventDiv.textContent = eventText;
@@ -126,30 +137,25 @@ function createEventElement(eventText, index, eventKey) {
     return eventDiv;
 }
 
-function prevMonth() {
+// Funktion zum Wechseln zum vorherigen Monat
+function prevMonthFunction() {
     currentMonth--;
     if (currentMonth < 0) {
         currentMonth = 11;
         currentYear--;
-        (audio.paused) 
-            audio.play(0);
     }
     generateCalendar();
 }
 
-function nextMonth() {
+// Funktion zum Wechseln zum nächsten Monat
+function nextMonthFunction() {
     currentMonth++;
     if (currentMonth > 11) {
         currentMonth = 0;
         currentYear++;
-        (audio.paused) 
-            audio.play(0);
     }
     generateCalendar();
 }
-
-
-
 
 
 

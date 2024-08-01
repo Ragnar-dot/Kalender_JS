@@ -1,87 +1,35 @@
 
-.current-day {
-    background-color: lightblue;
-    font-weight: bold;
-    animation: pulse 1ms inherit;
-}
-
-@keyframes pulse {
-    100% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(2);
-    }
-    10% {
-        transform: scale(1);
-    }
-}
 
 body {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: cover;
+    justify-content: flex;
+    
     margin: 0;
-    padding: 30px;
+    padding: 10vh;
     font-family: Arial, sans-serif;
-    margin: center;
-    box-sizing: border-box;
-    ;
-     
-     
-
-}
-.image-container {
-    background-image: url("how-to-make-background-blur-for-vertical-video.jpg");
-    display: block; 
-    background-repeat: no-repeat;
-    background-size: cover; /* Ensures the image covers the container */
-    margin: 100px;
-    color: #000000;
-    opacity: 0.9; 
+    /* margin: center; */
     
-    
+      
 }
 
-.image-container::before {
-    content: '';
+video {
     position: absolute;
-    background-image: url("plane-6559698_1280.jpg"); 
-    background-repeat: no-repeat;
-    background-size: cover; /* Ensures the image covers the container */
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    filter: blur(5px); /* Set a specific blur value */
-    z-index: -1;
-    opacity: 90%;
-    ;
-    
-    
-}
+    min-width: 100%;
+    min-height: 100%;
+    z-index: index -1000;;
+  }
 
-.image-container::after {
-    content: '';
-    position: absolute;
-    display: block; 
-    mix-blend-mode: luminosity; 
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover; /* Ensures the image covers the container */
-    border-radius: 50px;
-    
-}
+
+
 
 
 
 
 
 .calendar, .info {
-    margin: 0 50px;
+    margin: -10vh;
     text-align: center;
     font-style: italic;
     margin: flex;
@@ -96,19 +44,15 @@ table {
     20px 30px 20px rgba(0, 0, 0, 0.928);
     width: 450px;     
     height: 400px;
-    margin-top: 250px;
+    margin-top: 20vh;
     margin: flex;
     border-radius: 1px 2px 30px;
+   
     
     
 
     
 }
-
-
-
-
-
 
 
 
@@ -131,6 +75,7 @@ table {
     border-radius: 50px ;
     border: 1px solid rgba(300, 213, 209, 1);
     box-shadow: inset 5px 1px 5px rgba(0, 0, 0, 0.991);
+    z-index: 100;
     
     
             
@@ -181,8 +126,8 @@ h1 {
     font-size: 30px;
     font-style: oblique;
     opacity: 80%;
-    padding: 5px;
-    margin-left: 300px;
+    padding: 1vh;
+    margin-left: 30vh;
     margin-bottom: 30px;
     color: #000000;
     background: #33333300;
@@ -195,13 +140,16 @@ h1 {
     
 }
 .info {
-    max-width: 3000px;
+    height: 15vh;
+    width: 15wh;
     box-shadow: #ffffff;
     color: black;
     background: #000000;
     margin:auto;
+    margin-bottom: -15vh;
+    margin-left: -60vh;
     
-    -moz-background-clip: text;
+    
     background-clip: text;
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.091);
     word-break: unset;
@@ -223,6 +171,7 @@ td:hover {
     align-items: center;
     display: flex;
     box-shadow: #000000;
+
     
     
 }
@@ -233,7 +182,7 @@ td:hover {
 
 
 .current-day {
-    background-color: rgb(135, 210, 236);
+    background-color: rgb(59, 197, 243);
     font-weight: bold;
     animation: pulse 2s infinite;
 }
@@ -313,10 +262,11 @@ td:hover {
 
 .info h3 {
     margin-top: 1px;
-    background-color: #ffffff42;
+    
+    background-color: #ffffffbb;
     font-style: italic;
     text-wrap: balance;
-    border-radius: 50px 5%;
+    border-radius: 10px 10px;
     
     /* animation für den Infotext .info h3 */
     animation: textwelle 1s;
